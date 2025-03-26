@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Navigation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Classroom Navigation</h1>
+    
+    <div class="search-container">
+        <!-- Dropdown for selecting building -->
+        <select id="buildingDropdown">
+            <option value="" disabled selected>Select a building</option>
+            <option value="science-hall">Science Hall</option>
+            <option value="engineering-center">Engineering Center</option>
+            <option value="arts-complex">Arts Complex</option>
+            <option value="math-and-computing">Math and Computing Building</option>
+            <option value="humanities-hall">Humanities Hall</option>
+            <option value="social-sciences">Social Sciences Building</option>
+            <option value="library-building">Library Building</option>
+            <option value="sports-complex">Sports Complex</option>
+            <option value="music-building">Music Building</option>
+            <option value="nursing-school">Nursing School</option>
+        </select>
+
+        <!-- Dropdown for selecting class (enabled after building selection) -->
+        <select id="classDropdown" disabled>
+            <option value="" disabled selected>Select a class</option>
+        </select>
+
+        <!-- Dropdown for selecting room -->
+        <select id="roomDropdown" disabled>
+            <option value="" disabled selected>Select a room</option>
+        </select>
+
+        <!-- Button to search for the classroom -->
+        <button id="searchButton">Find Classroom</button>
+    </div>
+    
+    <div id="mapContainer" class="map-container" style="display: none;">
+        <!-- Display floor title (e.g., "Floor 1 Layout") -->
+        <div id="floorTitle" class="floor-title"></div>
+        
+        <!-- SVG container for the floor layout -->
+        <div id="svgContainer"></div>
+    </div>
+
+    <!-- Include the script file -->
+    <script src="script.js"></script>
+    <script src="floorlayout.js"></script>
+</body>
+</html>

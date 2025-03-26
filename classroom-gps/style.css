@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+}
+
+.search-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#searchInput {
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+}
+
+#searchButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    background-color: #45a049;
+}
+
+.result-container, .map-container {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.map-container {
+    background-color: #f9f9f9;
+}
+
+.floor-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+svg {
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+.room {
+    fill-opacity: 0.7;
+    stroke: #333;
+    stroke-width: 1;
+}
+
+.room:hover {
+    fill-opacity: 1;
+    stroke-width: 2;
+}
+
+.highlight {
+    fill-opacity: 1;
+    stroke-width: 3;
+    stroke: #ff0000;
+}
+
+.corridor {
+    fill: #ddd;
+    stroke: #999;
+}
+
+.room-label {
+    font-size: 8px;
+    text-anchor: middle;
+    pointer-events: none;
+}
+
+.user-dot {
+    fill: #4285F4;
+    stroke: #3367D6;
+    stroke-width: 1;
+    r: 3;
+}
+
+.destination-dot {
+    fill: #EA4335;
+    stroke: #D33426;
+    stroke-width: 1;
+    r: 3;
+}
+
+.navigation-path {
+    fill: none;
+    stroke: #4285F4;
+    stroke-width: 2;
+    stroke-dasharray: 5,3;
+}
+
+.controls {
+    margin-top: 15px;
+    text-align: center;
+}
+
+#startNavigation {
+    padding: 8px 16px;
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#startNavigation:hover {
+    background-color: #3367D6;
+}
+
+#navigationStatus {
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
+}
