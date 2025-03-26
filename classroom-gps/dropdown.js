@@ -3,41 +3,41 @@ const campusBuildings = {
     "science-hall": {
         displayName: "Science Hall",
         floors: {
-            1: { description: "Main Science Floor", rooms: generateRooms(10, 1) },
-            2: { description: "Advanced Labs", rooms: generateRooms(10, 2) },
-            3: { description: "Research Labs", rooms: generateRooms(10, 3) },
-            4: { description: "Special Projects", rooms: generateRooms(10, 4) },
-            5: { description: "Graduate Studies", rooms: generateRooms(10, 5) }
+            1: { description: "Main Science Floor", rooms: generateRooms(3, 1) }, // Reduced room count to 3 per floor
+            2: { description: "Advanced Labs", rooms: generateRooms(3, 2) },
+            3: { description: "Research Labs", rooms: generateRooms(3, 3) },
+            4: { description: "Special Projects", rooms: generateRooms(3, 4) },
+            5: { description: "Graduate Studies", rooms: generateRooms(3, 5) }
         }
     },
     "engineering-center": {
         displayName: "Engineering Center",
         floors: {
-            1: { description: "Engineering Basics", rooms: generateRooms(10, 1) },
-            2: { description: "Advanced Engineering", rooms: generateRooms(10, 2) },
-            3: { description: "Labs and Workshops", rooms: generateRooms(10, 3) },
-            4: { description: "Research and Development", rooms: generateRooms(10, 4) },
-            5: { description: "Graduate Engineering", rooms: generateRooms(10, 5) }
+            1: { description: "Engineering Basics", rooms: generateRooms(3, 1) },
+            2: { description: "Advanced Engineering", rooms: generateRooms(3, 2) },
+            3: { description: "Labs and Workshops", rooms: generateRooms(3, 3) },
+            4: { description: "Research and Development", rooms: generateRooms(3, 4) },
+            5: { description: "Graduate Engineering", rooms: generateRooms(3, 5) }
         }
     },
     "arts-complex": {
         displayName: "Arts Complex",
         floors: {
-            1: { description: "Creative Arts Studios", rooms: generateRooms(10, 1) },
-            2: { description: "Digital Arts and Media", rooms: generateRooms(10, 2) },
-            3: { description: "Sculpture and Painting", rooms: generateRooms(10, 3) },
-            4: { description: "Music Studios", rooms: generateRooms(10, 4) },
-            5: { description: "Theater and Performance", rooms: generateRooms(10, 5) }
+            1: { description: "Creative Arts Studios", rooms: generateRooms(3, 1) },
+            2: { description: "Digital Arts and Media", rooms: generateRooms(3, 2) },
+            3: { description: "Sculpture and Painting", rooms: generateRooms(3, 3) },
+            4: { description: "Music Studios", rooms: generateRooms(3, 4) },
+            5: { description: "Theater and Performance", rooms: generateRooms(3, 5) }
         }
     },
     "math-and-computing": {
         displayName: "Math and Computing Building",
         floors: {
-            1: { description: "Math Courses", rooms: generateRooms(10, 1) },
-            2: { description: "Computer Science Labs", rooms: generateRooms(10, 2) },
-            3: { description: "Data Science", rooms: generateRooms(10, 3) },
-            4: { description: "Advanced Computing", rooms: generateRooms(10, 4) },
-            5: { description: "Math Research", rooms: generateRooms(10, 5) }
+            1: { description: "Math Courses", rooms: generateRooms(3, 1) },
+            2: { description: "Computer Science Labs", rooms: generateRooms(3, 2) },
+            3: { description: "Data Science", rooms: generateRooms(3, 3) },
+            4: { description: "Advanced Computing", rooms: generateRooms(3, 4) },
+            5: { description: "Math Research", rooms: generateRooms(3, 5) }
         }
     }
 };
@@ -56,7 +56,7 @@ const classToBuilding = {
     "Marketing 101": "math-and-computing"
 };
 
-// Function to generate rooms (10 rooms per floor)
+// Function to generate rooms (3 rooms per floor)
 function generateRooms(roomCount, floorNumber) {
     const rooms = [];
     for (let i = 1; i <= roomCount; i++) {
@@ -70,18 +70,18 @@ function generateRooms(roomCount, floorNumber) {
     return rooms;
 }
 
-// Room options
+// Room options (example data, can be customized)
 const roomOptions = {
-    "Physics 101": ["101A", "101B", "101C", "101D", "101E", "101F", "101G", "101H", "101I", "101J"],
-    "Biology 201": ["201A", "201B", "201C", "201D", "201E", "201F", "201G", "201H", "201I", "201J"],
-    "Chemistry 301": ["301A", "301B", "301C", "301D", "301E", "301F", "301G", "301H", "301I", "301J"],
-    "Mechanics 110": ["110A", "110B", "110C", "110D", "110E", "110F", "110G", "110H", "110I", "110J"],
-    "Thermodynamics 220": ["220A", "220B", "220C", "220D", "220E", "220F", "220G", "220H", "220I", "220J"],
-    "Circuits 330": ["330A", "330B", "330C", "330D", "330E", "330F", "330G", "330H", "330I", "330J"],
-    "Painting 101": ["101A", "101B", "101C", "101D", "101E", "101F", "101G", "101H", "101I", "101J"],
-    "Music Theory 150": ["150A", "150B", "150C", "150D", "150E", "150F", "150G", "150H", "150I", "150J"],
-    "Theater 200": ["200A", "200B", "200C", "200D", "200E", "200F", "200G", "200H", "200I", "200J"],
-    "Marketing 101": ["101A", "101B", "101C", "101D", "101E", "101F", "101G", "101H", "101I", "101J"]
+    "Physics 101": ["101A", "101B", "101C"],
+    "Biology 201": ["201A", "201B", "201C"],
+    "Chemistry 301": ["301A", "301B", "301C"],
+    "Mechanics 110": ["110A", "110B", "110C"],
+    "Thermodynamics 220": ["220A", "220B", "220C"],
+    "Circuits 330": ["330A", "330B", "330C"],
+    "Painting 101": ["101A", "101B", "101C"],
+    "Music Theory 150": ["150A", "150B", "150C"],
+    "Theater 200": ["200A", "200B", "200C"],
+    "Marketing 101": ["101A", "101B", "101C"]
 };
 
 // Initialize building dropdown
@@ -137,7 +137,7 @@ function updateRoomDropdown(courseName) {
     }
 }
 
-// Handle classroom search
+// Handle classroom search and floor generation
 function handleClassroomSelection() {
     const buildingId = document.getElementById("buildingDropdown").value;
     const courseName = document.getElementById("classDropdown").value;
@@ -156,12 +156,75 @@ function handleClassroomSelection() {
     let selectedRoom = courseRooms.find(r => r === room);
     if (selectedRoom) {
         const roomDetails = building.floors[Math.floor(parseInt(room.substring(0, 1)) / 10)].rooms.find(r => r.id === room);
-        document.getElementById("floorTitle").textContent = building.displayName + " - Floor " + roomDetails.floor;
+        
+        // Create a floor map
+        generateFloorPlan(building, roomDetails.floor);
+
+        // Show selected room on the floor plan
+        document.getElementById("floorTitle").textContent = `${building.displayName} - Floor ${roomDetails.floor}`;
         document.getElementById("svgContainer").innerHTML = `Room ${roomDetails.name} is on Floor ${roomDetails.floor}.`;
     }
 
     // Show the map container
     document.getElementById("mapContainer").style.display = "block";
+
+    // Save data to JSON
+    saveCampusFloorsToJson(buildingId, roomDetails);
+}
+
+// Function to generate floor plan SVG
+function generateFloorPlan(building, floorLevel) {
+    const floor = building.floors[floorLevel];
+    const rooms = floor.rooms;
+    
+    let html = `<svg
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 600"
+        style="border: 1px solid #000;"
+    >
+        <text x="50%" y="10%" text-anchor="middle" font-size="24" font-family="Arial" fill="black">
+            Floor: ${floorLevel} - ${floor.description}
+        </text>`;
+
+    rooms.forEach((room, index) => {
+        html += `<rect x="${room.coordinates.x}" y="${room.coordinates.y}" width="${room.dimensions.width}" height="${room.dimensions.height}" fill="#ddd" stroke="#000" />
+                 <text x="${room.coordinates.x + 10}" y="${room.coordinates.y + 20}" font-size="14" font-family="Arial" fill="black">
+                     ${room.name}
+                 </text>`;
+    });
+
+    html += `</svg>`;
+    document.getElementById("svgContainer").innerHTML = html;
+}
+
+// Function to save campusFloors data to JSON
+function saveCampusFloorsToJson(buildingId, roomDetails) {
+    const campusFloors = JSON.parse(localStorage.getItem("campusFloors")) || {};
+
+    if (!campusFloors[buildingId]) {
+        campusFloors[buildingId] = {};
+    }
+
+    const floorKey = roomDetails.floor;
+    if (!campusFloors[buildingId][floorKey]) {
+        campusFloors[buildingId][floorKey] = [];
+    }
+
+    const roomExists = campusFloors[buildingId][floorKey].find(room => room.room === roomDetails.name);
+    if (!roomExists) {
+        campusFloors[buildingId][floorKey].push({
+            floor: floorKey,
+            room: roomDetails.name,
+            room_x: roomDetails.coordinates.x,
+            room_y: roomDetails.coordinates.y
+        });
+
+        localStorage.setItem("campusFloors", JSON.stringify(campusFloors));
+        alert("Room data added to campusFloors.");
+    } else {
+        alert("Room data already exists.");
+    }
 }
 
 // Initialize page elements
