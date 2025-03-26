@@ -1,0 +1,94 @@
+{
+    "campusBuildings": {
+        "science-hall": {
+            "displayName": "Science Hall",
+            "floors": {
+                "1": { 
+                    "description": "Main Science Floor", 
+                    "rooms": [
+                        { "id": "11", "coordinates": { "x": 0, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "101A" },
+                        { "id": "12", "coordinates": { "x": 100, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "101B" },
+                        { "id": "13", "coordinates": { "x": 200, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "101C" }
+                    ]
+                },
+                "2": { 
+                    "description": "Advanced Labs", 
+                    "rooms": [
+                        { "id": "21", "coordinates": { "x": 0, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "201A" },
+                        { "id": "22", "coordinates": { "x": 100, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "201B" }
+                    ]
+                },
+                "3": { 
+                    "description": "Research Labs", 
+                    "rooms": [
+                        { "id": "31", "coordinates": { "x": 0, "y": 200 }, "dimensions": { "width": 80, "height": 80 }, "name": "301A" }
+                    ]
+                }
+            }
+        },
+        "engineering-center": {
+            "displayName": "Engineering Center",
+            "floors": {
+                "1": { 
+                    "description": "Engineering Basics", 
+                    "rooms": [
+                        { "id": "11", "coordinates": { "x": 0, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "110A" },
+                        { "id": "12", "coordinates": { "x": 100, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "110B" }
+                    ]
+                },
+                "2": { 
+                    "description": "Advanced Engineering", 
+                    "rooms": [
+                        { "id": "21", "coordinates": { "x": 0, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "220A" }
+                    ]
+                }
+            }
+        },
+        "arts-complex": {
+            "displayName": "Arts Complex",
+            "floors": {
+                "1": { 
+                    "description": "Creative Arts Studios", 
+                    "rooms": [
+                        { "id": "11", "coordinates": { "x": 0, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "101A" }
+                    ]
+                },
+                "2": { 
+                    "description": "Digital Arts and Media", 
+                    "rooms": [
+                        { "id": "21", "coordinates": { "x": 0, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "150A" }
+                    ]
+                }
+            }
+        },
+        "math-and-computing": {
+            "displayName": "Math and Computing Building",
+            "floors": {
+                "1": { 
+                    "description": "Math Courses", 
+                    "rooms": [
+                        { "id": "11", "coordinates": { "x": 0, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "101A" }
+                    ]
+                },
+                "2": { 
+                    "description": "Computer Science Labs", 
+                    "rooms": [
+                        { "id": "21", "coordinates": { "x": 0, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "220A" }
+                    ]
+                }
+            }
+        }
+    },
+    "classToBuilding": {
+        "Physics 101": "science-hall",
+        "Biology 201": "science-hall",
+        "Chemistry 301": "science-hall",
+        "Mechanics 110": "engineering-center",
+        "Thermodynamics 220": "engineering-center",
+        "Circuits 330": "engineering-center",
+        "Painting 101": "arts-complex",
+        "Music Theory 150": "arts-complex",
+        "Theater 200": "arts-complex",
+        "Marketing 101": "math-and-computing"
+    }
+}
