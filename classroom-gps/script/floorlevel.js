@@ -53,7 +53,6 @@ document.getElementById("searchButton").addEventListener("click", async function
     const courseName = document.getElementById("classDropdown").value;
     const room = document.getElementById("roomDropdown").value;
 
-    // Alert the current room value being searched for
     alert(`Searching for Room: ${room}`);
 
     if (!buildingId || !courseName || !room) {
@@ -79,8 +78,7 @@ document.getElementById("searchButton").addEventListener("click", async function
         const roomNames = rooms.map(r => `${r.name} (${r.class})`).join(", ");
         alert(`Floor ${floor} has rooms: ${roomNames}`);
 
-        // Check if selected room exists on this floor
-        const roomDetails = rooms.find(r => r.name === room);
+       const roomDetails = rooms.find(r => r.name === room);
         if (roomDetails) {
             floorNumber = parseInt(floor);
             alert(`✅ Room ${room} found on Floor ${floor}`);
