@@ -51,6 +51,9 @@ document.getElementById("searchButton").addEventListener("click", async function
     const courseName = document.getElementById("classDropdown").value;
     const room = document.getElementById("roomDropdown").value;
 
+    // Alert the current room value being searched for
+    alert(`Searching for Room: ${room}`);
+
     if (!buildingId || !courseName || !room) {
         alert("Please select a building, class, and room.");
         return;
@@ -67,9 +70,18 @@ document.getElementById("searchButton").addEventListener("click", async function
 
     let floorNumber = null;
     for (let floor in building.floors) {
-        const roomDetails = building.floors[floor].rooms.find(r => r.name === room);
+        const rooms = building.floors[floor].rooms;
+
+        if (!rooms || rooms.length === 0) continue;
+
+        const roomNames = rooms.map(r => `${r.name} (${r.class})`).join(", ");
+        alert(`Floor ${floor} has rooms: ${roomNames}`);
+
+        // Check if selected room exists on this floor
+        const roomDetails = rooms.find(r => r.name === room);
         if (roomDetails) {
             floorNumber = parseInt(floor);
+            alert(`✅ Room ${room} found on Floor ${floor}`);
             break;
         }
     }
@@ -77,6 +89,6 @@ document.getElementById("searchButton").addEventListener("click", async function
     if (floorNumber !== null) {
         createFloorSelection(floorNumber, Object.keys(building.floors).length);
     } else {
-        alert("Room not found in the selected building.");
+        alert(`❌ Room ${room} not found in the selected building.`);
     }
 });
