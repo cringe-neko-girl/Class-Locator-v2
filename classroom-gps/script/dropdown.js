@@ -82,9 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const classId = classDropdown.value;
                 const roomId = roomDropdown.value;
 
-                // Check if the room is selected and update the dropdown value to the selected room
                 if (buildingId && classId && roomId) {
-                    // Update the selected room option
                     const selectedRoomOption = roomDropdown.querySelector(`option[value='${roomId}']`);
                     if (selectedRoomOption) {
                         selectedRoomOption.selected = true;
