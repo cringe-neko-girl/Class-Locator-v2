@@ -1,3 +1,5 @@
+alert("✅ floorlevel.js connected ")
+
 async function loadClassesData() {
     try {
         const response = await fetch('data/class.json');
