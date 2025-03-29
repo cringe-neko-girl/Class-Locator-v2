@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             const campusData = data;
 
+            // Populate the building dropdown with building names from the data
             Object.values(campusData.campusBuildings).forEach(building => {
                 const option = document.createElement('option');
                 option.value = building.displayName.toLowerCase().replace(/\s+/g, '-');
@@ -81,7 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 const classId = classDropdown.value;
                 const roomId = roomDropdown.value;
 
+                // Check if the room is selected and update the dropdown value to the selected room
                 if (buildingId && classId && roomId) {
+                    // Update the selected room option
                     const selectedRoomOption = roomDropdown.querySelector(`option[value='${roomId}']`);
                     if (selectedRoomOption) {
                         selectedRoomOption.selected = true;
