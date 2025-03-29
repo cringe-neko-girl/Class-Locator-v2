@@ -7,21 +7,23 @@
                     "description": "Main Science Floor", 
                     "rooms": [
                         { "id": "11", "coordinates": { "x": 0, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "101A", "class": "Physics 101" },
-                        { "id": "12", "coordinates": { "x": 100, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "101B", "class": "Biology 201" },
-                        { "id": "13", "coordinates": { "x": 200, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "101C", "class": "Organic Chemistry 301" }
+                        { "id": "13", "coordinates": { "x": 200, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "103B", "class": "Organic Chemistry 301" },
+                        { "id": "12", "coordinates": { "x": 100, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "102C", "class": "Biology 201" }
                     ]
                 },
                 "2": { 
                     "description": "Advanced Labs", 
                     "rooms": [
                         { "id": "21", "coordinates": { "x": 0, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "201A", "class": "Mechanics 101" },
-                        { "id": "22", "coordinates": { "x": 100, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "201B", "class": "Thermodynamics 220" }
+                        { "id": "22", "coordinates": { "x": 100, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "202B", "class": "Thermodynamics 220" },
+                        { "id": "24", "coordinates": { "x": 200, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "204C", "class": "Environmental Science 250" }
                     ]
                 },
                 "3": { 
                     "description": "Research Labs", 
                     "rooms": [
-                        { "id": "31", "coordinates": { "x": 0, "y": 200 }, "dimensions": { "width": 80, "height": 80 }, "name": "301A", "class": "Quantum Mechanics 330" }
+                        { "id": "31", "coordinates": { "x": 0, "y": 200 }, "dimensions": { "width": 80, "height": 80 }, "name": "305A", "class": "Quantum Mechanics 330" },
+                        { "id": "32", "coordinates": { "x": 100, "y": 200 }, "dimensions": { "width": 80, "height": 80 }, "name": "308B", "class": "Astrophysics 401" }
                     ]
                 }
             }
@@ -33,13 +35,15 @@
                     "description": "Engineering Basics", 
                     "rooms": [
                         { "id": "11", "coordinates": { "x": 0, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "110A", "class": "Introduction to Engineering" },
-                        { "id": "12", "coordinates": { "x": 100, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "110B", "class": "Fluid Mechanics 220" }
+                        { "id": "12", "coordinates": { "x": 100, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "113B", "class": "Fluid Mechanics 220" },
+                        { "id": "14", "coordinates": { "x": 200, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "115C", "class": "Engineering Ethics 210" }
                     ]
                 },
                 "2": { 
                     "description": "Advanced Engineering", 
                     "rooms": [
-                        { "id": "21", "coordinates": { "x": 0, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "220A", "class": "Electrical Engineering 330" }
+                        { "id": "21", "coordinates": { "x": 0, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "220A", "class": "Electrical Engineering 330" },
+                        { "id": "23", "coordinates": { "x": 100, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "222C", "class": "Control Systems 340" }
                     ]
                 }
             }
@@ -50,13 +54,17 @@
                 "1": { 
                     "description": "Creative Arts Studios", 
                     "rooms": [
-                        { "id": "11", "coordinates": { "x": 0, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "101A", "class": "Painting Techniques 101" }
+                        { "id": "11", "coordinates": { "x": 0, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "101A", "class": "Painting Techniques 101" },
+                        { "id": "12", "coordinates": { "x": 100, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "103B", "class": "Sculpture 102" },
+                        { "id": "14", "coordinates": { "x": 200, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "105C", "class": "Photography Basics 103" }
                     ]
                 },
                 "2": { 
                     "description": "Digital Arts and Media", 
                     "rooms": [
-                        { "id": "21", "coordinates": { "x": 0, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "150A", "class": "Introduction to Digital Art 150" }
+                        { "id": "21", "coordinates": { "x": 0, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "151A", "class": "Introduction to Digital Art 150" },
+                        { "id": "22", "coordinates": { "x": 100, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "153B", "class": "3D Animation 160" },
+                        { "id": "24", "coordinates": { "x": 200, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "155C", "class": "Interactive Media 170" }
                     ]
                 }
             }
@@ -67,13 +75,17 @@
                 "1": { 
                     "description": "Mathematics Courses", 
                     "rooms": [
-                        { "id": "11", "coordinates": { "x": 0, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "101A", "class": "Calculus I" }
+                        { "id": "11", "coordinates": { "x": 0, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "100A", "class": "Calculus I" },
+                        { "id": "12", "coordinates": { "x": 100, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "103B", "class": "Linear Algebra 102" },
+                        { "id": "13", "coordinates": { "x": 200, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "107C", "class": "Differential Equations 110" }
                     ]
                 },
                 "2": { 
                     "description": "Computer Science Labs", 
                     "rooms": [
-                        { "id": "21", "coordinates": { "x": 0, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "220A", "class": "Data Structures and Algorithms" }
+                        { "id": "21", "coordinates": { "x": 0, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "200A", "class": "Data Structures and Algorithms" },
+                        { "id": "22", "coordinates": { "x": 100, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "202B", "class": "Operating Systems 230" },
+                        { "id": "23", "coordinates": { "x": 200, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "204C", "class": "Database Systems 240" }
                     ]
                 }
             }
@@ -85,13 +97,25 @@
         "Organic Chemistry 301": "science-hall",
         "Mechanics 101": "engineering-center",
         "Thermodynamics 220": "engineering-center",
+        "Environmental Science 250": "science-hall",
         "Quantum Mechanics 330": "science-hall",
+        "Astrophysics 401": "science-hall",
         "Introduction to Engineering": "engineering-center",
         "Fluid Mechanics 220": "engineering-center",
+        "Engineering Ethics 210": "engineering-center",
         "Electrical Engineering 330": "engineering-center",
+        "Control Systems 340": "engineering-center",
         "Painting Techniques 101": "arts-complex",
+        "Sculpture 102": "arts-complex",
+        "Photography Basics 103": "arts-complex",
         "Introduction to Digital Art 150": "arts-complex",
+        "3D Animation 160": "arts-complex",
+        "Interactive Media 170": "arts-complex",
         "Calculus I": "math-and-computing",
-        "Data Structures and Algorithms": "math-and-computing"
+        "Linear Algebra 102": "math-and-computing",
+        "Differential Equations 110": "math-and-computing",
+        "Data Structures and Algorithms": "math-and-computing",
+        "Operating Systems 230": "math-and-computing",
+        "Database Systems 240": "math-and-computing"
     }
 }
