@@ -1,3 +1,4 @@
+alert("✅ dropdown.js connected ")
 document.addEventListener("DOMContentLoaded", () => {
     const buildingDropdown = document.getElementById('buildingDropdown');
     const classDropdown = document.getElementById('classDropdown');
