@@ -67,13 +67,13 @@
                 "1": { 
                     "description": "Math Courses", 
                     "rooms": [
-                        { "id": "11", "coordinates": { "x": 0, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "101A", "class": "Marketing 101" }
+                        { "id": "11", "coordinates": { "x": 0, "y": 0 }, "dimensions": { "width": 80, "height": 80 }, "name": "101A", "class": "Calculus 101" }
                     ]
                 },
                 "2": { 
                     "description": "Computer Science Labs", 
                     "rooms": [
-                        { "id": "21", "coordinates": { "x": 0, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "220A", "class": "Marketing 101" }
+                        { "id": "21", "coordinates": { "x": 0, "y": 100 }, "dimensions": { "width": 80, "height": 80 }, "name": "220A", "class": "Algorithms 201" }
                     ]
                 }
             }
@@ -89,6 +89,7 @@
         "Painting 101": "arts-complex",
         "Music Theory 150": "arts-complex",
         "Theater 200": "arts-complex",
-        "Marketing 101": "math-and-computing"
+        "Calculus 101": "math-and-computing",
+        "Algorithms 201": "math-and-computing"
     }
 }
