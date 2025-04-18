@@ -1,62 +1,173 @@
-alert("✅ floorlevel.js connected ")
+alert("✅ floorlevel.js connected");
 
 async function loadClassesData() {
     try {
         const response = await fetch('data/class.json');
         return await response.json();
     } catch (error) {
-        alert("Error loading classes data: " + error);
+        showNotification("Error loading classes data: " + error, 'error');
+        return null;
     }
 }
 
-function createFloorSelection(floorNumber, totalFloors) {
-    const floorBar = document.createElement('div');
-    floorBar.style.position = 'absolute';
-    floorBar.style.right = '5%';
-    floorBar.style.top = '50%';
-    floorBar.style.transform = 'translateY(-50%)';
-    floorBar.style.width = '300px';
-    floorBar.style.height = '350px';
-    floorBar.style.border = '2px solid #333';
-    floorBar.style.backgroundColor = '#f0f0f0';
-    floorBar.style.display = 'flex';
-    floorBar.style.flexDirection = 'column-reverse';
-    floorBar.style.alignItems = 'center';
-    floorBar.style.justifyContent = 'space-between';
+function showNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerHTML = `
+        <span class="material-icons">${type === 'success' ? 'check_circle' : 'error'}</span>
+        ${message}
+    `;
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 10);
+    
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            notification.remove();
+        }, 300);
+    }, 3000);
+}
+
+function createBuildingDisplay(targetFloor, totalFloors) {
+    const existingDisplay = document.querySelector('.building-display');
+    if (existingDisplay) existingDisplay.remove();
+
+    const MAX_CONTAINER_HEIGHT = 100;
+    const MIN_FLOOR_HEIGHT = 40;
+    const CONTAINER_WIDTH = 300;
+
+    const calculatedHeight = Math.max(MIN_FLOOR_HEIGHT * totalFloors, MAX_CONTAINER_HEIGHT);
+    const floorHeight = calculatedHeight / totalFloors;
+
+    const container = document.createElement('div');
+    container.className = 'building-display';
+    container.style.cssText = `
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+        width: ${CONTAINER_WIDTH}px;
+        height: ${calculatedHeight + 32}px;
+        background: rgba(30, 30, 50, 0.9);
+        border-radius: 8px;
+        padding: 1rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 100;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+    `;
+
+    const buildingStructure = document.createElement('div');
+    buildingStructure.className = 'building-structure';
+    buildingStructure.style.cssText = `
+        display: flex;
+        flex-direction: column-reverse;
+        height: ${calculatedHeight}px;
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+    `;
 
     for (let i = 1; i <= totalFloors; i++) {
-        const floor = document.createElement('div');
-        floor.style.width = '80%';
-        floor.style.height = `${100 / totalFloors}%`;
-        floor.style.borderBottom = '2px solid #444';
-        floor.style.backgroundColor = i === floorNumber ? '#ff5c8e' : '#dcdcdc';
-        floor.style.position = 'relative';
+        const isTarget = i === targetFloor;
+        const floorSection = document.createElement('div');
+        floorSection.className = `floor-section ${isTarget ? 'active' : ''}`;
+        floorSection.style.cssText = `
+            width: 100%;
+            height: ${floorHeight}px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: all 0.3s ease;
+            background: ${isTarget
+                ? 'linear-gradient(to right, #9e50bb, #6a3093)'
+                : 'rgba(100, 100, 120, 0.4)'};
+            color: ${isTarget ? 'white' : 'rgba(255, 255, 255, 0.7)'};
+            font-weight: ${isTarget ? '600' : '500'};
+            font-size: 0.85rem;
+        `;
 
-        const floorLabel = document.createElement('span');
-        floorLabel.innerText = `Floor ${i}`;
-        floorLabel.style.fontSize = '14px';
-        floorLabel.style.fontWeight = 'bold';
-        floorLabel.style.color = i === floorNumber ? '#fff' : '#333';
-        floorLabel.style.position = 'absolute';
-        floorLabel.style.top = '50%';
-        floorLabel.style.left = '50%';
-        floorLabel.style.transform = 'translate(-50%, -50%)';
+        const floorText = document.createElement('div');
+        floorText.textContent = `Floor ${i}`;
+        floorSection.appendChild(floorText);
 
-        floor.appendChild(floorLabel);
-        floorBar.appendChild(floor);
+        if (!isTarget) {
+            for (let w = 0; w < 3; w++) {
+                const window = document.createElement('div');
+                window.style.cssText = `
+                    position: absolute;
+                    width: 8px;
+                    height: 12px;
+                    background: rgba(255, 255, 255, 0.1);
+                    border-radius: 2px;
+                    ${w === 0 ? 'left: 20%' : w === 1 ? 'left: 50%' : 'left: 80%'};
+                    transform: translateX(-50%);
+                `;
+                floorSection.appendChild(window);
+            }
+        }
+
+        buildingStructure.appendChild(floorSection);
     }
-    document.body.appendChild(floorBar);
+
+    container.appendChild(buildingStructure);
+
+    const title = document.createElement('div');
+    title.style.cssText = `
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.9);
+    `;
+    title.textContent = '';
+    container.appendChild(title);
+
+    const legend = document.createElement('div');
+    legend.style.cssText = `
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        display: flex;
+        gap: 1rem;
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.7);
+    `;
+    legend.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <div style="width: 12px; height: 12px; background: linear-gradient(to right, #9e50bb, #6a3093); border-radius: 2px;"></div>
+            <span>Destination</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <div style="width: 12px; height: 12px; background: rgba(100, 100, 120, 0.4); border-radius: 2px;"></div>
+            <span>Other Floors</span>
+        </div>
+    `;
+    container.appendChild(legend);
+
+    document.body.appendChild(container);
+
+    setTimeout(() => {
+        container.style.opacity = '1';
+        container.style.transform = 'translateY(0)';
+    }, 10);
 }
+
 
 document.getElementById("searchButton").addEventListener("click", async function () {
     const buildingId = document.getElementById("buildingDropdown").value;
     const courseName = document.getElementById("classDropdown").value;
     const room = document.getElementById("roomDropdown").value;
 
-    alert(`Searching for Room: ${room}`);
-
     if (!buildingId || !courseName || !room) {
-        alert("Please select a building, class, and room.");
+        showNotification("Please select a building, class, and room.", 'error');
         return;
     }
 
@@ -65,30 +176,26 @@ document.getElementById("searchButton").addEventListener("click", async function
 
     const building = data.campusBuildings[buildingId];
     if (!building) {
-        alert("Building not found.");
+        showNotification("Building not found.", 'error');
         return;
     }
 
     let floorNumber = null;
     for (let floor in building.floors) {
         const rooms = building.floors[floor].rooms;
-
         if (!rooms || rooms.length === 0) continue;
 
-        const roomNames = rooms.map(r => `${r.name} (${r.class})`).join(", ");
-        alert(`Floor ${floor} has rooms: ${roomNames}`);
-
-       const roomDetails = rooms.find(r => r.name === room);
+        const roomDetails = rooms.find(r => r.name === room);
         if (roomDetails) {
             floorNumber = parseInt(floor);
-            alert(`✅ Room ${room} found on Floor ${floor}`);
+            showNotification(`Room ${room} found on Floor ${floor}`);
             break;
         }
     }
 
     if (floorNumber !== null) {
-        createFloorSelection(floorNumber, Object.keys(building.floors).length);
+        createBuildingDisplay(floorNumber, Object.keys(building.floors).length);
     } else {
-        alert(`❌ Room ${room} not found in the selected building.`);
+        showNotification(`Room ${room} not found in the selected building.`, 'error');
     }
 });

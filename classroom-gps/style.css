@@ -1,132 +1,310 @@
+/* ==================== */
+/* === ROOT VARIABLES === */
+/* ==================== */
+:root {
+    /* Color Palette */
+    --primary: #6e48aa;       /* Main purple color */
+    --secondary: #9d50bb;     /* Secondary purple */
+    --accent: #4776e6;        /* Blue accent color */
+    --dark: #1a1a2e;          /* Dark background color */
+    --darker: #16213e;        /* Darker background variant */
+    --light: #e6e6e6;         /* Light text color */
+    --success: #4caf50;       /* Success notification color */
+    --error: #ff5252;         /* Error notification color */
+    
+    /* Design Tokens */
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.2);  /* Default shadow */
+    --radius: 10px;           /* Default border radius */
+    --radius-small: 6px;      /* Smaller border radius */
+    --transition: all 0.25s ease; /* Default transition */
+}
+
+
+/* ==================== */
+/* === BASE STYLES === */
+/* ==================== */
 body {
-    font-family: Arial, sans-serif;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
+    font-family: 'Segoe UI', system-ui, sans-serif; /* Modern font stack */
+    background: linear-gradient(135deg, var(--darker), var(--dark)); /* Gradient background */
+    color: var(--light);      /* Default text color */
+    margin: 0;                /* Remove default margin */
+    padding: 1rem;            /* Add safe spacing */
+    min-height: 100vh;        /* Full viewport height */
+    display: flex;            /* Flex layout */
+    flex-direction: column;   /* Vertical stacking */
+    align-items: center;      /* Center horizontally */
+    justify-content: flex-start; /* Align to top */
 }
 
+
+/* ==================== */
+/* === HEADER STYLES === */
+/* ==================== */
 h1 {
-    font-size: 24px;
-    text-align: center;
+    font-size: 1.8rem;        /* Responsive heading size */
+    margin: 1.5rem 0;         /* Vertical spacing */
+    text-align: center;       /* Center alignment */
+    color: white;             /* Bright text color */
+    display: flex;            /* Flex for icon alignment */
+    align-items: center;      /* Vertical center */
+    gap: 0.5rem;              /* Space between icon and text */
 }
 
+
+/* ======================== */
+/* === MAIN CONTAINER === */
+/* ======================== */
 .search-container {
-    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.08); /* Semi-transparent white */
+    backdrop-filter: blur(8px);             /* Frosted glass effect */
+    border-radius: var(--radius);           /* Rounded corners */
+    padding: 1.5rem;                       /* Inner spacing */
+    width: min(95%, 500px);                /* Responsive width */
+    box-shadow: var(--shadow);             /* Depth effect */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Subtle border */
+    transition: var(--transition);         /* Smooth hover effect */
+}
+
+.search-container:hover {
+    transform: translateY(-2px);           /* Lift effect */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+}
+
+
+/* ======================== */
+/* === FORM COMPONENTS === */
+/* ======================== */
+.dropdown-wrapper {
+    position: relative;       /* Positioning context for arrow */
+    margin-bottom: 1rem;      /* Space between dropdowns */
+}
+
+select {
+    width: 100%;              /* Full width */
+    padding: 0.8rem;          /* Comfortable padding */
+    border: none;             /* Remove default border */
+    border-radius: var(--radius-small); /* Rounded corners */
+    background: rgba(0, 0, 0, 0.2); /* Semi-transparent black */
+    color: var(--light);      /* Light text */
+    font-size: 0.95rem;       /* Comfortable reading size */
+    appearance: none;         /* Remove default styling */
+    cursor: pointer;          /* Pointer cursor */
+    transition: var(--transition); /* Smooth transitions */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+select:hover {
+    background: rgba(0, 0, 0, 0.25); /* Slightly darker on hover */
+}
+
+select:focus {
+    outline: none;            /* Remove default outline */
+    box-shadow: 0 0 0 2px var(--accent); /* Blue focus ring */
+}
+
+/* Custom dropdown arrow */
+.dropdown-wrapper::after {
+    content: "▼";             /* Down arrow */
+    font-size: 0.7rem;        /* Small size */
+    color: var(--light);      /* Light color */
+    position: absolute;       /* Position relative to wrapper */
+    right: 1rem;              /* Right-aligned */
+    top: 50%;                 /* Vertical center */
+    transform: translateY(-50%); /* Perfect centering */
+    pointer-events: none;     /* Click through */
+    opacity: 0.6;             /* Slightly transparent */
+}
+
+button {
+    width: 100%;              /* Full width */
+    padding: 0.8rem;          /* Comfortable padding */
+    background: linear-gradient(to right, var(--primary), var(--secondary)); /* Gradient */
+    color: white;             /* White text */
+    border: none;             /* No border */
+    border-radius: var(--radius-small); /* Rounded corners */
+    font-size: 1rem;          /* Comfortable reading size */
+    font-weight: 500;         /* Medium weight */
+    cursor: pointer;          /* Pointer cursor */
+    transition: var(--transition); /* Smooth transitions */
+    display: flex;            /* Flex for icon alignment */
+    align-items: center;      /* Vertical center */
+    justify-content: center;  /* Horizontal center */
+    gap: 0.5rem;              /* Space between icon and text */
+}
+
+button:hover {
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+button:active {
+    transform: translateY(0); /* Reset when clicked */
+}
+
+
+/* ======================== */
+/* === BUILDING DISPLAY === */
+/* ======================== */
+.building-display {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    width: 300px;                  /* Updated from 100px */
+    background: rgba(30, 30, 50, 0.85);
+    border-radius: var(--radius);
+    padding: 1rem;                 /* Slightly increased padding */
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(5px);
+    border: 2px solid #333;        /* Updated border */
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: var(--transition);
+}
+
+.building-structure {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 4px;                      /* Increased gap between floors */
+    height: 350px;                 /* Updated from 200px */
+    border-radius: 4px;            /* Added border radius */
+    overflow: hidden;              /* Keep contents contained */
+}
+
+.floor-section {
+    width: 100%;
+    background: rgba(70, 70, 90, 0.4);
+    border-radius: 4px;
+    padding: 0.8rem 0;             /* Increased padding */
     display: flex;
     justify-content: center;
-    gap: 10px;
+    align-items: center;
+    position: relative;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Added subtle border */
 }
 
-#searchInput {
-    padding: 10px;
-    width: 300px;
-    font-size: 16px;
+.floor-section.active {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    box-shadow: 0 0 12px rgba(158, 80, 187, 0.5); /* Enhanced glow */
+    border-color: rgba(255, 255, 255, 0.3); /* Brighter border when active */
 }
 
-#searchButton {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4CAF50;
+.floor-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;             /* Slightly larger text */
+    font-weight: 500;
+    z-index: 2;                    /* Ensure text stays above gradients */
+}
+
+.floor-section.active .floor-text {
     color: white;
-    border: none;
-    cursor: pointer;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Added text shadow */
 }
 
-#searchButton:hover {
-    background-color: #45a049;
+.floor-indicator {
+    position: absolute;
+    right: calc(100% + 1rem);      /* Increased distance from building */
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0.6rem 1rem;          /* Slightly larger padding */
+    border-radius: var(--radius-small);
+    font-size: 0.85rem;            /* Slightly larger text */
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;                   /* Increased gap between icon and text */
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
 }
 
-.result-container, .map-container {
-    margin-top: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+/* Responsive adjustments for the larger display */
+@media (max-width: 768px) {
+    .building-display {
+        width: 250px;              /* Slightly smaller on mobile */
+        height: 300px;
+        right: 0.5rem;
+        bottom: 0.5rem;
+    }
+    
+    .building-structure {
+        height: 300px;             /* Adjusted height */
+    }
+    
+    .floor-text {
+        font-size: 0.8rem;         /* Adjusted text size */
+    }
+    
+    .floor-indicator {
+        font-size: 0.75rem;
+        right: calc(100% + 0.5rem);
+    }
 }
 
-.map-container {
-    background-color: #f9f9f9;
+/* ======================== */
+/* === NOTIFICATIONS === */
+/* ======================== */
+.notification {
+    position: fixed;          /* Fixed position */
+    bottom: 1rem;             /* From bottom */
+    left: 50%;                /* Horizontal center */
+    transform: translateX(-50%) translateY(100px); /* Start below */
+    background: rgba(0, 0, 0, 0.8); /* Dark background */
+    color: white;             /* White text */
+    padding: 0.8rem 1.2rem;   /* Comfortable padding */
+    border-radius: var(--radius-small); /* Rounded corners */
+    display: flex;            /* Flex for icon alignment */
+    align-items: center;      /* Vertical center */
+    gap: 0.5rem;              /* Space between icon and text */
+    box-shadow: var(--shadow); /* Depth effect */
+    opacity: 0;               /* Start hidden */
+    transition: var(--transition); /* Smooth reveal */
+    z-index: 1000;            /* Above everything */
+    max-width: 90%;           /* Prevent overflow */
 }
 
-.floor-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
+.notification.show {
+    transform: translateX(-50%) translateY(0); /* Slide up */
+    opacity: 1;               /* Fully visible */
 }
 
-svg {
-    background-color: white;
-    border: 1px solid #ccc;
+.notification.success {
+    border-left: 3px solid var(--success); /* Green accent */
 }
 
-.room {
-    fill-opacity: 0.7;
-    stroke: #333;
-    stroke-width: 1;
+.notification.error {
+    border-left: 3px solid var(--error); /* Red accent */
 }
 
-.room:hover {
-    fill-opacity: 1;
-    stroke-width: 2;
-}
 
-.highlight {
-    fill-opacity: 1;
-    stroke-width: 3;
-    stroke: #ff0000;
-}
-
-.corridor {
-    fill: #ddd;
-    stroke: #999;
-}
-
-.room-label {
-    font-size: 8px;
-    text-anchor: middle;
-    pointer-events: none;
-}
-
-.user-dot {
-    fill: #4285F4;
-    stroke: #3367D6;
-    stroke-width: 1;
-    r: 3;
-}
-
-.destination-dot {
-    fill: #EA4335;
-    stroke: #D33426;
-    stroke-width: 1;
-    r: 3;
-}
-
-.navigation-path {
-    fill: none;
-    stroke: #4285F4;
-    stroke-width: 2;
-    stroke-dasharray: 5,3;
-}
-
-.controls {
-    margin-top: 15px;
-    text-align: center;
-}
-
-#startNavigation {
-    padding: 8px 16px;
-    background-color: #4285F4;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#startNavigation:hover {
-    background-color: #3367D6;
-}
-
-#navigationStatus {
-    margin-top: 10px;
-    font-style: italic;
-    color: #666;
+/* ======================== */
+/* === RESPONSIVE DESIGN === */
+/* ======================== */
+@media (max-width: 768px) {
+    /* Smaller heading on mobile */
+    h1 {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
+    
+    /* More compact search container */
+    .search-container {
+        padding: 1.2rem;
+    }
+    
+    /* Smaller building display */
+    .building-display {
+        width: 80px;
+        padding: 0.6rem;
+    }
+    
+    /* Smaller floor text */
+    .floor-text {
+        font-size: 0.6rem;
+    }
+    
+    /* More compact indicator */
+    .floor-indicator {
+        font-size: 0.65rem;
+        padding: 0.4rem 0.6rem;
+    }
 }
