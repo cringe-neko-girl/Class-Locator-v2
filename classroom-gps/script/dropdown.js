@@ -1,81 +1,93 @@
-alert("✅ dropdown.js connected ")
 document.addEventListener("DOMContentLoaded", () => {
+    alert("✅ dropdown.js connected");
+
     const buildingDropdown = document.getElementById('buildingDropdown');
     const classDropdown = document.getElementById('classDropdown');
     const roomDropdown = document.getElementById('roomDropdown');
     const searchButton = document.getElementById('searchButton');
 
+    if (!buildingDropdown || !classDropdown || !roomDropdown || !searchButton) {
+        return;
+    }
+
     fetch('data/class.json')
         .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to fetch data");
-            }
+            if (!response.ok) throw new Error("Failed to fetch data");
             return response.json();
         })
         .then(data => {
             const campusData = data;
 
-            // Populate the building dropdown with building names from the data
-            Object.values(campusData.campusBuildings).forEach(building => {
+            // Populate buildings
+            Object.entries(campusData.campusBuildings).forEach(([key, building]) => {
                 const option = document.createElement('option');
-                option.value = building.displayName.toLowerCase().replace(/\s+/g, '-');
+                option.value = key;
                 option.textContent = building.displayName;
                 buildingDropdown.appendChild(option);
             });
 
             buildingDropdown.addEventListener('change', () => {
                 const buildingId = buildingDropdown.value;
-                populateClassDropdown(buildingId, campusData);
-                classDropdown.disabled = false;
+                classDropdown.disabled = true;
+                roomDropdown.disabled = true;
+                classDropdown.innerHTML = `<option value="" disabled selected>Select a class</option>`;
+                roomDropdown.innerHTML = `<option value="" disabled selected>Select a room</option>`;
+
+                if (campusData.campusBuildings[buildingId]) {
+                    populateClassDropdown(buildingId, campusData);
+                    classDropdown.disabled = false;
+                }
             });
 
             classDropdown.addEventListener('change', () => {
                 const buildingId = buildingDropdown.value;
                 const classId = classDropdown.value;
+                roomDropdown.disabled = true;
+                roomDropdown.innerHTML = `<option value="" disabled selected>Select a room</option>`;
+
                 populateRoomDropdown(buildingId, classId, campusData);
                 roomDropdown.disabled = false;
             });
 
-            function populateClassDropdown(buildingId, campusData) {
-                classDropdown.innerHTML = `<option value="" disabled selected>Select a class</option>`;
-                let buildingFound = false;
-                for (const building of Object.values(campusData.campusBuildings)) {
-                    if (buildingId === building.displayName.toLowerCase().replace(/\s+/g, '-')) {
-                        buildingFound = true;
-                        for (const floor of Object.values(building.floors)) {
-                            floor.rooms.forEach(room => {
-                                const option = document.createElement('option');
-                                option.value = room.class;
-                                option.textContent = room.class;
-                                classDropdown.appendChild(option);
-                            });
+            function populateClassDropdown(buildingId, data) {
+                const building = data.campusBuildings[buildingId];
+                const classSet = new Set();
+
+                for (const floor of Object.values(building.floors)) {
+                    floor.rooms.forEach(room => {
+                        if (!classSet.has(room.class)) {
+                            const option = document.createElement('option');
+                            option.value = room.class;
+                            option.textContent = room.class;
+                            classDropdown.appendChild(option);
+                            classSet.add(room.class);
                         }
-                        break;
-                    }
+                    });
                 }
-                if (!buildingFound) console.error("No building found for the selected ID: " + buildingId);
             }
 
-            function populateRoomDropdown(buildingId, classId, campusData) {
-                roomDropdown.innerHTML = `<option value="" disabled selected>Select a room</option>`;
-                let roomFound = false;
-                for (const building of Object.values(campusData.campusBuildings)) {
-                    if (buildingId === building.displayName.toLowerCase().replace(/\s+/g, '-')) {
-                        for (const floor of Object.values(building.floors)) {
-                            floor.rooms.forEach(room => {
-                                if (room.class === classId) {
-                                    const option = document.createElement('option');
-                                    option.value = room.name;
-                                    option.textContent = room.name;
-                                    roomDropdown.appendChild(option);
-                                    roomFound = true;
-                                }
-                            });
+            function populateRoomDropdown(buildingId, classId, data) {
+                const building = data.campusBuildings[buildingId];
+                let found = false;
+
+                for (const floor of Object.values(building.floors)) {
+                    floor.rooms.forEach(room => {
+                        if (room.class === classId) {
+                            const option = document.createElement('option');
+                            option.value = room.name;
+                            option.textContent = room.name;
+                            roomDropdown.appendChild(option);
+                            found = true;
                         }
-                        break;
-                    }
+                    });
                 }
-                if (!roomFound) console.error("No rooms found for class: " + classId);
+
+                if (!found) {
+                    const fallback = document.createElement('option');
+                    fallback.value = "";
+                    fallback.textContent = "No rooms available";
+                    roomDropdown.appendChild(fallback);
+                }
             }
 
             searchButton.addEventListener('click', () => {
@@ -83,19 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 const classId = classDropdown.value;
                 const roomId = roomDropdown.value;
 
-                if (buildingId && classId && roomId) {
-                    const selectedRoomOption = roomDropdown.querySelector(`option[value='${roomId}']`);
-                    if (selectedRoomOption) {
-                        selectedRoomOption.selected = true;
-                    }
-
-                    console.log(`Navigating to ${classId} in room ${roomId}, ${buildingId.replace(/-/g, ' ')}`);
-                } else {
-                    console.error('Please select a building, class, and room.');
-                }
             });
         })
         .catch(error => {
-            console.error("Failed to load classroom data: " + error.message);
+            console.error("Failed to load classroom data:", error);
         });
 });

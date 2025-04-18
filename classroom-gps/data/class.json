@@ -1,22 +1,38 @@
 {
     "campusBuildings": {
-      "science-hall": {
-        "displayName": "Science Hall",
+      "arts-complex": {
+        "displayName": "Arts Complex",
         "floors": {
           "1": {
-            "description": "Main Science Floor",
+            "description": "Creative Arts Studios",
             "rooms": [
-              { "id": "11", "name": "100", "class": "Physics 101", "image": "images/science-hall/1/100" },
-              { "id": "12", "name": "102", "class": "Biology", "image": "images/science-hall/1/102" },
-              { "id": "13", "name": "104", "class": "Organic Chemistry 255", "image": "images/science-hall/1/104" }
+              { "id": "11", "name": "100", "class": "Painting Techniques 101", "image": "images/arts-complex/1/100" },
+              { "id": "12", "name": "103", "class": "Sculpture 102", "image": "images/arts-complex/1/103" },
+              { "id": "13", "name": "101", "class": "Photography Basics 103", "image": "images/arts-complex/1/101" }
             ]
           },
           "2": {
-            "description": "Advanced Labs",
+            "description": "Digital Arts and Media",
             "rooms": [
-              { "id": "21", "name": "200", "class": "Intro to Mechanics 101", "image": "images/science-hall/2/200" },
-              { "id": "22", "name": "202", "class": "Environmental Science", "image": "images/science-hall/2/202" },
-              { "id": "23", "name": "205", "class": "Thermodynamics 220", "image": "images/science-hall/2/205" }
+              { "id": "21", "name": "203", "class": "Introduction to Digital Art 150", "image": "images/arts-complex/2/203" },
+              { "id": "22", "name": "200", "class": "3D Animation", "image": "images/arts-complex/2/200" },
+              { "id": "23", "name": "202", "class": "Interactive Media 170", "image": "images/arts-complex/2/202" }
+            ]
+          }
+        }
+      },
+      "engineering-center": {
+        "displayName": "Engineering Center",
+        "floors": {
+          "1": {
+            "description": "General Engineering Studies",
+            "rooms": [
+              { "id": "11", "name": "100", "class": "Engineering Design Fundamentals", "image": "images/engineering-center/1/100" },
+              { "id": "12", "name": "101", "class": "Statics", "image": "images/engineering-center/1/101" },
+              { "id": "13", "name": "102", "class": "Materials Science", "image": "images/engineering-center/1/102" },
+              { "id": "14", "name": "103", "class": "Fluid Mechanics", "image": "images/engineering-center/1/103" },
+              { "id": "15", "name": "104", "class": "Circuits 101", "image": "images/engineering-center/1/104" },
+              { "id": "16", "name": "105", "class": "Control Systems", "image": "images/engineering-center/1/105" }
             ]
           }
         }
@@ -55,39 +71,23 @@
           }
         }
       },
-      "arts-complex": {
-        "displayName": "Arts Complex",
+      "science-hall": {
+        "displayName": "Science Hall",
         "floors": {
           "1": {
-            "description": "Creative Arts Studios",
+            "description": "Main Science Floor",
             "rooms": [
-              { "id": "11", "name": "100", "class": "Painting Techniques 101", "image": "images/arts-complex/1/100" },
-              { "id": "12", "name": "103", "class": "Sculpture 102", "image": "images/arts-complex/1/103" },
-              { "id": "13", "name": "101", "class": "Photography Basics 103", "image": "images/arts-complex/1/104" }
+              { "id": "11", "name": "100", "class": "Physics 101", "image": "images/science-hall/1/100" },
+              { "id": "12", "name": "102", "class": "Biology", "image": "images/science-hall/1/102" },
+              { "id": "13", "name": "104", "class": "Organic Chemistry 255", "image": "images/science-hall/1/104" }
             ]
           },
           "2": {
-            "description": "Digital Arts and Media",
+            "description": "Advanced Labs",
             "rooms": [
-              { "id": "21", "name": "203", "class": "Introduction to Digital Art 150", "image": "images/arts-complex/2/203" },
-              { "id": "22", "name": "200", "class": "3D Animation", "image": "images/arts-complex/2/200" },
-              { "id": "23", "name": "202", "class": "Interactive Media 170", "image": "images/arts-complex/2/202" }
-            ]
-          }
-        }
-      },
-      "engineering-center": {
-        "displayName": "Engineering Center",
-        "floors": {
-          "1": {
-            "description": "General Engineering Studies",
-            "rooms": [
-              { "id": "11", "name": "100", "class": "Engineering Design Fundamentals", "image": "images/engineering-center/1/100" },
-              { "id": "12", "name": "101", "class": "Statics", "image": "images/engineering-center/1/101" },
-              { "id": "13", "name": "102", "class": "Materials Science", "image": "images/engineering-center/1/102" },
-              { "id": "14", "name": "103", "class": "Fluid Mechanics", "image": "images/engineering-center/1/103" },
-              { "id": "15", "name": "104", "class": "Circuits 101", "image": "images/engineering-center/1/104" },
-              { "id": "16", "name": "105", "class": "Control Systems", "image": "images/engineering-center/1/105" }
+              { "id": "21", "name": "200", "class": "Intro to Mechanics 101", "image": "images/science-hall/2/200" },
+              { "id": "22", "name": "202", "class": "Environmental Science", "image": "images/science-hall/2/202" },
+              { "id": "23", "name": "205", "class": "Thermodynamics 220", "image": "images/science-hall/2/205" }
             ]
           }
         }
