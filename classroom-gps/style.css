@@ -276,6 +276,115 @@ button:active {
 }
 
 
+/* ==================== */
+/* === NOTIFICATIONS === */
+/* ==================== */
+.notification-floor {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* Changed from right to left */
+    padding: 16px 20px;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--darker);
+    color: var(--light);
+    box-shadow: var(--shadow);
+    transform: translateX(-100px); /* Changed from translateY to translateX */
+    opacity: 0;
+    transition: var(--transition);
+    z-index: 1000;
+    max-width: 320px;
+    border-left: 4px solid transparent;
+}
+
+.notification-floor.show {
+    transform: translateX(0); /* Changed from translateY to translateX */
+    opacity: 1;
+}
+
+.notification-floor.success {
+    border-left-color: var(--success);
+}
+
+.notification-floor.error {
+    border-left-color: var(--error);
+}
+
+.notification-icon {
+    flex-shrink: 0;
+}
+
+.notification-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.notification-icon.success svg {
+    color: var(--success);
+}
+
+.notification-icon.error svg {
+    color: var(--error);
+}
+
+.notification-message {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* ==================== */
+/* === FLOOR PLAN CONTAINER === */
+/* ==================== */
+.floor-plan-container {
+    margin: 2rem auto;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    background-color: var(--dark);
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: var(--shadow);
+}
+
+.floor-plan-image {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: var(--radius-small);
+    transition: var(--transition);
+}
+
+.floor-plan-image:hover {
+    transform: scale(1.02);
+}
+
+.floor-plan-placeholder {
+    color: var(--light);
+    opacity: 0.7;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Animation for placeholder */
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 0.9; }
+    100% { opacity: 0.6; }
+}
+
+.floor-plan-placeholder .icon {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    animation: pulse 2s infinite;
+}
+
 /* ======================== */
 /* === RESPONSIVE DESIGN === */
 /* ======================== */
