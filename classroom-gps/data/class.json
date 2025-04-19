@@ -6,17 +6,17 @@
           "1": {
             "description": "Creative Arts Studios",
             "rooms": [
-              { "id": "11", "name": "100", "class": "Painting Techniques 101", "image": "images/arts-complex/1/100" },
-              { "id": "12", "name": "103", "class": "Sculpture 102", "image": "images/arts-complex/1/103" },
-              { "id": "13", "name": "101", "class": "Photography Basics 103", "image": "images/arts-complex/1/101" }
+              { "id": "11", "name": "100", "class": "Painting Techniques 101", "image": "classroom-gps/images/arts-complex/1/100" },
+              { "id": "12", "name": "103", "class": "Sculpture 102", "image": "classroom-gps/images/arts-complex/1/103" },
+              { "id": "13", "name": "101", "class": "Photography Basics 103", "image": "classroom-gps/images/arts-complex/1/101" }
             ]
           },
           "2": {
             "description": "Digital Arts and Media",
             "rooms": [
-              { "id": "21", "name": "203", "class": "Introduction to Digital Art 150", "image": "images/arts-complex/2/203" },
-              { "id": "22", "name": "200", "class": "3D Animation", "image": "images/arts-complex/2/200" },
-              { "id": "23", "name": "202", "class": "Interactive Media 170", "image": "images/arts-complex/2/202" }
+              { "id": "21", "name": "203", "class": "Introduction to Digital Art 150", "image": "classroom-gps/images/arts-complex/2/203" },
+              { "id": "22", "name": "200", "class": "3D Animation", "image": "classroom-gps/images/arts-complex/2/200" },
+              { "id": "23", "name": "202", "class": "Interactive Media 170", "image": "classroom-gps/images/arts-complex/2/202" }
             ]
           }
         }
@@ -27,12 +27,12 @@
           "1": {
             "description": "General Engineering Studies",
             "rooms": [
-              { "id": "11", "name": "100", "class": "Engineering Design Fundamentals", "image": "images/engineering-center/1/100" },
-              { "id": "12", "name": "101", "class": "Statics", "image": "images/engineering-center/1/101" },
-              { "id": "13", "name": "102", "class": "Materials Science", "image": "images/engineering-center/1/102" },
-              { "id": "14", "name": "103", "class": "Fluid Mechanics", "image": "images/engineering-center/1/103" },
-              { "id": "15", "name": "104", "class": "Circuits 101", "image": "images/engineering-center/1/104" },
-              { "id": "16", "name": "105", "class": "Control Systems", "image": "images/engineering-center/1/105" }
+              { "id": "11", "name": "100", "class": "Engineering Design Fundamentals", "image": "classroom-gps/images/engineering-center/1/100" },
+              { "id": "12", "name": "101", "class": "Statics", "image": "classroom-gps/images/engineering-center/1/101" },
+              { "id": "13", "name": "102", "class": "Materials Science", "image": "classroom-gps/images/engineering-center/1/102" },
+              { "id": "14", "name": "103", "class": "Fluid Mechanics", "image": "classroom-gps/images/engineering-center/1/103" },
+              { "id": "15", "name": "104", "class": "Circuits 101", "image": "classroom-gps/images/engineering-center/1/104" },
+              { "id": "16", "name": "105", "class": "Control Systems", "image": "classroom-gps/images/engineering-center/1/105" }
             ]
           }
         }
@@ -43,30 +43,30 @@
           "1": {
             "description": "Mathematics Courses",
             "rooms": [
-              { "id": "11", "name": "100", "class": "Calculus I", "image": "images/math-and-computing/1/100" },
-              { "id": "12", "name": "101", "class": "Precalculus", "image": "images/math-and-computing/1/101" },
-              { "id": "13", "name": "102", "class": "Linear Algebra 102", "image": "images/math-and-computing/1/102" },
-              { "id": "14", "name": "103", "class": "Discrete Math", "image": "images/math-and-computing/1/103" },
-              { "id": "15", "name": "104", "class": "Differential Equations 110", "image": "images/math-and-computing/1/104" }
+              { "id": "11", "name": "100", "class": "Calculus I", "image": "classroom-gps/images/math-and-computing/1/100" },
+              { "id": "12", "name": "101", "class": "Precalculus", "image": "classroom-gps/images/math-and-computing/1/101" },
+              { "id": "13", "name": "102", "class": "Linear Algebra 102", "image": "classroom-gps/images/math-and-computing/1/102" },
+              { "id": "14", "name": "103", "class": "Discrete Math", "image": "classroom-gps/images/math-and-computing/1/103" },
+              { "id": "15", "name": "104", "class": "Differential Equations 110", "image": "classroom-gps/images/math-and-computing/1/104" }
             ]
           },
           "2": {
             "description": "Computer Science Labs",
             "rooms": [
-              { "id": "21", "name": "200", "class": "Data Structures and Algorithms", "image": "images/math-and-computing/2/200" },
-              { "id": "22", "name": "201", "class": "Computer Architecture", "image": "images/math-and-computing/2/201" },
-              { "id": "23", "name": "202", "class": "Operating Systems 230", "image": "images/math-and-computing/2/202" },
-              { "id": "24", "name": "203", "class": "Database Systems 240", "image": "images/math-and-computing/2/203" },
-              { "id": "25", "name": "204", "class": "Networks and Security", "image": "images/math-and-computing/2/204" }
+              { "id": "21", "name": "200", "class": "Data Structures and Algorithms", "image": "classroom-gps/images/math-and-computing/2/200" },
+              { "id": "22", "name": "201", "class": "Computer Architecture", "image": "classroom-gps/images/math-and-computing/2/201" },
+              { "id": "23", "name": "202", "class": "Operating Systems 230", "image": "classroom-gps/images/math-and-computing/2/202" },
+              { "id": "24", "name": "203", "class": "Database Systems 240", "image": "classroom-gps/images/math-and-computing/2/203" },
+              { "id": "25", "name": "204", "class": "Networks and Security", "image": "classroom-gps/images/math-and-computing/2/204" }
             ]
           },
           "3": {
             "description": "Graduate Research and AI",
             "rooms": [
-              { "id": "31", "name": "300", "class": "Cryptography", "image": "images/math-and-computing/3/300" },
-              { "id": "32", "name": "302", "class": "Machine Learning 310", "image": "images/math-and-computing/3/302" },
-              { "id": "33", "name": "303", "class": "Natural Language Processing", "image": "images/math-and-computing/3/303" },
-              { "id": "34", "name": "305", "class": "Artificial Intelligence", "image": "images/math-and-computing/3/305" }
+              { "id": "31", "name": "300", "class": "Cryptography", "image": "classroom-gps/images/math-and-computing/3/300" },
+              { "id": "32", "name": "302", "class": "Machine Learning 310", "image": "classroom-gps/images/math-and-computing/3/302" },
+              { "id": "33", "name": "303", "class": "Natural Language Processing", "image": "classroom-gps/images/math-and-computing/3/303" },
+              { "id": "34", "name": "305", "class": "Artificial Intelligence", "image": "classroom-gps/images/math-and-computing/3/305" }
             ]
           }
         }
@@ -77,17 +77,17 @@
           "1": {
             "description": "Main Science Floor",
             "rooms": [
-              { "id": "11", "name": "100", "class": "Physics 101", "image": "images/science-hall/1/100" },
-              { "id": "12", "name": "102", "class": "Biology", "image": "images/science-hall/1/102" },
-              { "id": "13", "name": "104", "class": "Organic Chemistry 255", "image": "images/science-hall/1/104" }
+              { "id": "11", "name": "100", "class": "Physics 101", "image": "classroom-gps/images/science-hall/1/100" },
+              { "id": "12", "name": "102", "class": "Biology", "image": "classroom-gps/images/science-hall/1/102" },
+              { "id": "13", "name": "104", "class": "Organic Chemistry 255", "image": "classroom-gps/images/science-hall/1/104" }
             ]
           },
           "2": {
             "description": "Advanced Labs",
             "rooms": [
-              { "id": "21", "name": "200", "class": "Intro to Mechanics 101", "image": "images/science-hall/2/200" },
-              { "id": "22", "name": "202", "class": "Environmental Science", "image": "images/science-hall/2/202" },
-              { "id": "23", "name": "205", "class": "Thermodynamics 220", "image": "images/science-hall/2/205" }
+              { "id": "21", "name": "200", "class": "Intro to Mechanics 101", "image": "classroom-gps/images/science-hall/2/200" },
+              { "id": "22", "name": "202", "class": "Environmental Science", "image": "classroom-gps/images/science-hall/2/202" },
+              { "id": "23", "name": "205", "class": "Thermodynamics 220", "image": "classroom-gps/images/science-hall/2/205" }
             ]
           }
         }
