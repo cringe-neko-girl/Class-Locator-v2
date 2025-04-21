@@ -25,12 +25,10 @@ function showNotification(message, type = 'success') {
     
     document.body.appendChild(notification);
     
-    // Show notification
     setTimeout(() => {
         notification.classList.add('show');
     }, 10);
     
-    // Hide and remove after delay
     setTimeout(() => {
         notification.classList.remove('show');
         setTimeout(() => {
