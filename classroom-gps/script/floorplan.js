@@ -66,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 imageElement.alt = 'Room Floor Plan';
                 imageElement.className = 'floor-plan-image';
                 
-                // Add error handling for the image element
                 imageElement.onerror = () => {
                     showNotification('Failed to display the image (load error)', 'error');
                 };
@@ -106,6 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             notification.classList.remove('show');
             setTimeout(() => notification.remove(), 300);
-        }, type === 'info' ? 5000 : 3000); // Longer display for info messages
+        }, type === 'info' ? 5000 : 3000);
     }
 });
