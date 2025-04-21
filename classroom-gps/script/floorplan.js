@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
         alert(`Attempting to load image from: ${imagePath}`);
         showNotification(`Looking for image at: ${imagePath}`, 'info');
 
-        // Check if image exists before trying to display it
         checkImageExists(imagePath, exists => {
             if (exists) {
                 showNotification('Image found! Loading floor plan...', 'success');
